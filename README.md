@@ -21,4 +21,6 @@ curl https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh > calcu
 - [x] Division
 - [x] Modulo
 - [x] Floating point handling
+- [x] Save to file on default
+- [x] Error handling
 - [ ] Trigonometry
