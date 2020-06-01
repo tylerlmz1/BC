@@ -51,8 +51,14 @@ function python_way_arithmetic(){
 
 function basic_arithmetic_wrapper(){
   #while true; do
+    echo
     read -p "Calc:" input
-    python_way_arithmetic "$input"
+    echo $input >> ./log
+    answer=$(python_way_arithmetic "$input")
+    echo $answer
+    echo
+    echo $answer >> ./log
+    echo >> ./log
   #done
 }
 
@@ -66,18 +72,19 @@ function trigonometric(){
 # -------------------------------------------------------------- #
 # Welcome message
 # -------------------------------------------------------------- #
+echo -e \
+"
+\e[96m[ Calculator ]\033[0m
+------------------------------------
+Choose operation by index number:
+------------------------------------
+1) + - / * ** %
+2) Trigonometry
+------------------------------------
+"
+
 
 function main(){
-  echo -e \
-  "
-  \e[34m[ Calculator ]\033[0m
-  ------------------------------------
-  Choose operation by index number:
-  ------------------------------------
-  1) + - / * ** %
-  2) Trigonometry
-  ------------------------------------
-  "
   read -p index: operationIndexNum
 
   case "$operationIndexNum" in
