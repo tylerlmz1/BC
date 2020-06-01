@@ -4,6 +4,7 @@ A bash script calculator using Python as the backend
 
 written for a school assignment
 
+### How to use
 Run the calculator without saving the script into your OS:
 ```
 bash <(curl -s https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh)
