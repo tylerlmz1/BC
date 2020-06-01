@@ -50,24 +50,20 @@ function python_way_arithmetic(){
 }
 
 function basic_arithmetic_wrapper(){
-  #while true; do
-    echo
-    read -p "Calc:" input
-    echo $input >> ./log
-    answer=$(python_way_arithmetic "$input")
-    echo $answer
-    echo
-    echo $answer >> ./log
-    echo >> ./log
-  #done
+  echo
+  read -p "Calc:" input
+  echo $input >> ./log
+  answer=$(python_way_arithmetic "$input")
+  echo $answer
+  echo
+  echo $answer >> ./log
+  echo >> ./log
 }
 
 
 function trigonometric(){
   exit
 }
-
-
 
 # -------------------------------------------------------------- #
 # Welcome message
