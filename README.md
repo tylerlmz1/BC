@@ -5,15 +5,11 @@ A bash script calculator using Python as the backend
 written for a school assignment
 
 ### How to use
-Run the calculator without saving the script into your OS:
-```
-bash <(curl -s https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh)
-```
-
-Run the calculator by saving the script first:
+Run this in the terminal
 ```
 curl https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh > calculator.sh; bash calculator.sh
 ```
+it will download the calculator.sh file and run it with bash
 
 ### Features
 - [x] Addition
