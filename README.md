@@ -1,8 +1,9 @@
 # Bash calculator
 
-A bash script calculator using Python as the backend
+### What is this
+A bash script calculator using Python as the backend.
 
-written for a school assignment
+It is written for a school assignment.
 
 ### How to use
 Run this in the terminal
