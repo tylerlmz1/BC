@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
-
 # -------------------------------------------------------------- #
 # Bash calculator
 # -------------------------------------------------------------- #
-
-# TODO: push as github gist / a github repo file, then include instructions to curl and run it
-
 
 # -------------------------------------------------------------- #
 # Question requirement
@@ -23,7 +19,17 @@
 # -------------------------------------------------------------- #
 
 # Python is included in major linux distributions
-# if not, fall back to using bc
+# exit if python is not installed
+if ! [ -x "$(command -v haskell)" ]; then
+  echo \
+    'Error: Python is not installed.
+  run
+
+  sudo apt install python
+
+  if you are using Debian-based Linux distro.'>&2
+  exit 1
+fi
 
 # Fulfilled:
 # Addition
@@ -32,12 +38,14 @@
 # Division
 # Exponentiation
 # Modulus
+
+# supports + - / * ** % , chaining of operands, etc
+
 function python_way_arithmetic(){
   echo "print($1)" | python
 }
-#supports +-/* ** %
 
-function basic(){
+function basic_arithmetic_wrapper(){
   while true; do
     read -p "Calc:" input
     python_way_arithmetic "$input"
@@ -45,21 +53,9 @@ function basic(){
 }
 
 
-#function basic_arithmetic(){
-  #echo "scale=2; $1" | bc --mathlib
-#}
-# Utilizing `bc` command at the core
-# --mathlib enabled floating point results
-# scale defines floating point precision of result
-# $1 means first argument passed to it
-
-# -------------------------------------------------------------- #
-# Challenge tasks
-# -------------------------------------------------------------- #
-
-#function trigonometric(){
-
-#}
+function trigonometric(){
+  exit
+}
 
 
 
@@ -81,7 +77,7 @@ read -p index: operationIndexNum
 # case esac
 case "$operationIndexNum" in
   1)
-    basic
+    basic_arithmetic_wrapper
     ;;
   2)
     trigonometric
