@@ -34,6 +34,13 @@ function python_way_arithmetic(){
 }
 #supports +-/* ** %
 
+function basic(){
+  while true; do
+    read -p "Calc:" input
+    python_way_arithmetic "$input"
+  done
+}
+
 
 #function basic_arithmetic(){
   #echo "scale=2; $1" | bc --mathlib
@@ -66,13 +73,17 @@ Choose operation by index number:
 2) Trigonometry
 ------------------------------------
 "
+read -p index: operationIndexNum
 
 # case esac
-
-
-while true; do
-  read -p "Calc:" input
-  python_way_arithmetic "$input"
-done
-
-
+case "$operationIndexNum" in
+  1)
+    basic
+    ;;
+  2)
+    trigonometric
+    ;;
+  *)
+    #echo $"Usage: $0 {start|stop|restart|condrestart|status}"
+    exit 1
+esac
