@@ -15,12 +15,11 @@
 
 
 # -------------------------------------------------------------- #
-# Basic arithmetic
+# Check if Python exists
 # -------------------------------------------------------------- #
-
 # Python is included in major linux distributions
-# exit if python is not installed
-if ! [ -x "$(command -v haskell)" ]; then
+# exit with error message if python is not installed
+if ! [ -x "$(command -v python)" ]; then
   echo \
     'Error: Python is not installed.
   run
@@ -30,6 +29,11 @@ if ! [ -x "$(command -v haskell)" ]; then
   if you are using Debian-based Linux distro.'>&2
   exit 1
 fi
+
+# -------------------------------------------------------------- #
+# Basic arithmetic
+# -------------------------------------------------------------- #
+
 
 # Fulfilled:
 # Addition
@@ -74,7 +78,6 @@ Choose operation by index number:
 "
 read -p index: operationIndexNum
 
-# case esac
 case "$operationIndexNum" in
   1)
     basic_arithmetic_wrapper
@@ -83,6 +86,6 @@ case "$operationIndexNum" in
     trigonometric
     ;;
   *)
-    #echo $"Usage: $0 {start|stop|restart|condrestart|status}"
+    echo -e "\e[31mInvalid index number\e[0m"
     exit 1
 esac

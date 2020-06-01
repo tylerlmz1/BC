@@ -11,6 +11,5 @@ bash <(curl -s https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.
 
 Run the calculator by saving the script first:
 ```
-curl https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh > calculator.sh
-bash calculator.sh
+curl https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh > calculator.sh; bash calculator.sh
 ```

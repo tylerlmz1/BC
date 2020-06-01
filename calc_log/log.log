@@ -1,0 +1,22 @@
+Script started on 2020-06-01 23:55:52+0800
+[01;32mnimitz@nimitz-cl[00m:[01;34m~/Desktop/a_project_folders/SL/Y2S3/SL_now_task/OSF programming assg/Bash task/Code/code repo[00m
+[32m$[0m bash calculator.sh 
+
+[34m[ Calculator ][0m
+------------------------------------
+Choose operation by index number:
+------------------------------------
+1) + - / * ** %
+2) Trigonometry
+------------------------------------
+
+index:1
+Calc:2((  **2
+4
+Calc:4**3
+64
+Calc:^C
+[01;32mnimitz@nimitz-cl[00m:[01;34m~/Desktop/a_project_folders/SL/Y2S3/SL_now_task/OSF programming assg/Bash task/Code/code repo[00m
+[32m$[0m exit
+
+Script done on 2020-06-01 23:56:39+0800
