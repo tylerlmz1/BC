@@ -1,7 +1,12 @@
-Bash calculator
+# Bash calculator
 
 A bash script calculator using Python as backend
+
 written for a school assignment
 
 To run:
-`curl `
+
+```
+curl https://raw.githubusercontent.com/tylerlmz1/BC/master/calculator.sh > calculator.sh
+bash calculator.sh
+```
