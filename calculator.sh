@@ -5,6 +5,9 @@
 # Bash calculator
 # -------------------------------------------------------------- #
 
+# TODO: push as github gist / a github repo file, then include instructions to curl and run it
+
+
 # -------------------------------------------------------------- #
 # Question requirement
 # -------------------------------------------------------------- #
@@ -19,10 +22,32 @@
 # Basic arithmetic
 # -------------------------------------------------------------- #
 
-function basic_arithmetic(){
-  echo "scale=2; $1" | bc --mathlib
+# Python is included in major linux distributions
+# if not, fall back to using bc
+
+# Fulfilled:
+# Addition
+# Subtraction
+# Multiplication
+# Division
+# Exponentiation
+# Modulus
+function python_way_arithmetic(){
+  echo "print($1)" | python
+}
+#supports +-/* ** %
+
+function basic(){
+  while true; do
+    read -p "Calc:" input
+    python_way_arithmetic "$input"
+  done
 }
 
+
+#function basic_arithmetic(){
+  #echo "scale=2; $1" | bc --mathlib
+#}
 # Utilizing `bc` command at the core
 # --mathlib enabled floating point results
 # scale defines floating point precision of result
@@ -32,42 +57,36 @@ function basic_arithmetic(){
 # Challenge tasks
 # -------------------------------------------------------------- #
 
-function modulus(){
-  echo $(("$1" % "$2"))
-}
-
 #function trigonometric(){
 
 #}
 
-function exponentiation(){
-  result=$(($1**$2))
-}
-
 
 
 # -------------------------------------------------------------- #
-# Unit testing
+# Welcome message
 # -------------------------------------------------------------- #
+echo -e \
+"
+\e[34m[ Calculator ]\033[0m
+------------------------------------
+Choose operation by index number:
+------------------------------------
+1) + - / * ** %
+2) Trigonometry
+------------------------------------
+"
+read -p index: operationIndexNum
 
-# Integers
-#basic_arithmetic 10+5
-#basic_arithmetic 10-5
-#basic_arithmetic 10-5
-#basic_arithmetic 10/2
-
-## Floating point
-#basic_arithmetic 10.5/2
-#basic_arithmetic 10.5+2.3
-#basic_arithmetic 10.5-2.124
-
-#basic_arithmetic 9999/2.4
-#basic_arithmetic 9999432432423423432/2.3
-
-exponentiation 2 2
-
-modulus 5 2
-modulus 10 2
-#modulus "5.2" 2
-modulus 2443 34
-#modulus 5 2
+# case esac
+case "$operationIndexNum" in
+  1)
+    basic
+    ;;
+  2)
+    trigonometric
+    ;;
+  *)
+    #echo $"Usage: $0 {start|stop|restart|condrestart|status}"
+    exit 1
+esac
