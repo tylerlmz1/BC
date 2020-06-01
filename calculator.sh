@@ -50,10 +50,10 @@ function python_way_arithmetic(){
 }
 
 function basic_arithmetic_wrapper(){
-  while true; do
+  #while true; do
     read -p "Calc:" input
     python_way_arithmetic "$input"
-  done
+  #done
 }
 
 
@@ -66,26 +66,33 @@ function trigonometric(){
 # -------------------------------------------------------------- #
 # Welcome message
 # -------------------------------------------------------------- #
-echo -e \
-"
-\e[34m[ Calculator ]\033[0m
-------------------------------------
-Choose operation by index number:
-------------------------------------
-1) + - / * ** %
-2) Trigonometry
-------------------------------------
-"
-read -p index: operationIndexNum
 
-case "$operationIndexNum" in
-  1)
-    basic_arithmetic_wrapper
-    ;;
-  2)
-    trigonometric
-    ;;
-  *)
-    echo -e "\e[31mInvalid index number\e[0m"
-    exit 1
-esac
+function main(){
+  echo -e \
+  "
+  \e[34m[ Calculator ]\033[0m
+  ------------------------------------
+  Choose operation by index number:
+  ------------------------------------
+  1) + - / * ** %
+  2) Trigonometry
+  ------------------------------------
+  "
+  read -p index: operationIndexNum
+
+  case "$operationIndexNum" in
+    1)
+      basic_arithmetic_wrapper
+      ;;
+    2)
+      trigonometric
+      ;;
+    *)
+      echo -e "\e[31mInvalid index number\e[0m"
+      exit 1
+  esac
+}
+
+while true; do
+  main
+done
