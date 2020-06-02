@@ -5,16 +5,6 @@
 # -------------------------------------------------------------- #
 
 # -------------------------------------------------------------- #
-# Question requirement
-# -------------------------------------------------------------- #
-# - Create a shell script calculator.
-#  - This shell script will be able to perform the following task: Addition, Subtraction, Multiplication and Division.
-#  - The user of the shell script can choose which operation to perform, perform the operation and view the result on the terminal or on a file.
-# - Optional challenge task : Implement different arithmetic/mathematical functions such as modulus, or trigonometric function
-# -------------------------------------------------------------- #
-
-
-# -------------------------------------------------------------- #
 # Check if Python exists
 # -------------------------------------------------------------- #
 # Python is included in major linux distributions
@@ -31,27 +21,8 @@ if ! [ -x "$(command -v python)" ]; then
 fi
 
 # -------------------------------------------------------------- #
-# Basic arithmetic
+# functions
 # -------------------------------------------------------------- #
-
-
-# Fulfilled:
-# Addition
-# Subtraction
-# Multiplication
-# Division
-# Exponentiation
-# Modulus
-
-# supports + - / * ** % , chaining of operands, etc
-
-
-#function basic_arithmetic_wrapper(){
-  #echo
-  #read -p "Calc:" input
-  #echo $input >> ./log
-  #answer=$(python_way_arithmetic "$input")
-#}
 
 function printToTerminalAndWriteToFile(){
   echo $answer

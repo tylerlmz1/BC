@@ -17,8 +17,10 @@ it will download the calculator.sh file and run it with bash
 - [x] Subtraction
 - [x] Multiplication
 - [x] Division
+
 - [x] Modulo
+- [x] Trigonometry
+
 - [x] Floating point handling
+
 - [x] Save to file by default
-- [x] Error handling
-- [ ] Trigonometry
