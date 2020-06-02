@@ -23,4 +23,4 @@ it will download the calculator.sh file and run it with bash
 
 - [x] Floating point handling
 
-- [x] Save to file by default
+- [x] Saving input and answer to file by default

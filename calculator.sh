@@ -51,8 +51,8 @@ function mathFunction(){
     answer=$(echo "import math; print(math.$input)" | python)
     printToTerminalAndWriteToFile
 
-  else
   # else do basic arithmetic
+  else
 
     # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
     echo $input >> ./log
