@@ -18,7 +18,7 @@ it will download the calculator.sh file and run it with bash
 - [x] Multiplication (*)
 - [x] Division (/)
 - [x] Modulo (%)
-- [x] Trigonometry ( sin, cos, tan )
+- [x] Trigonometry (sin, cos, tan)
 - [x] Floating point support
 - [x] Saving input and answer to file by default
 
