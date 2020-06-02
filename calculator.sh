@@ -9,7 +9,9 @@
 # -------------------------------------------------------------- #
 # Python is included in major linux distros
 # exit with error message if python is not installed
+
 if ! [ -x "$(command -v python)" ]; then
+
   echo \
     'Error: Python is not installed.
   run
@@ -18,6 +20,7 @@ if ! [ -x "$(command -v python)" ]; then
 
   if you are using Debian-based Linux distro.'>&2
   exit 1
+
 fi
 
 # -------------------------------------------------------------- #
@@ -36,7 +39,7 @@ function printToTerminalAndWriteToFile(){
 
 }
 
-function math_function(){
+function mathFunction(){
 
   read -p "input:" input
 
@@ -66,11 +69,15 @@ function math_function(){
 echo -e \
 "
 \e[96m[ Calculator ]\033[0m
-This calculator supports + - * / % ** and trigonometry
 
-It also supports floating point numbers
+This calculator supports:
 
-It prints the answer to your terminal session, and logs both your input and the answer into a file called log in your current directory
++ - * / % **
+trigonometry
+floating point numbers
+operation chaining
+
+In addition to printing the answer to your terminal session, it also logs both your input and the answer into a file called log in your current directory
 
 --------------
 Example inputs
@@ -90,8 +97,9 @@ sin(60)+2**23.3
 2+4/2-3
 
 Try it out!
+------------------------------------------
 "
 
 while true; do
-  math_function
+  mathFunction
 done
