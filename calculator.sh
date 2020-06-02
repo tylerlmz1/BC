@@ -46,17 +46,25 @@ function mathFunction(){
   # if input contain sin/cos/tan, do trigonometry
   if [[ $input =~ sin|cos|tan ]]; then
 
+    # append input to log file
     echo $input >> ./log
+
+    # do trigonometry
     # example input: sin(30), cos(30), tan(30)
     answer=$(echo "import math; print(math.$input)" | python)
+
     printToTerminalAndWriteToFile
 
   # else do basic arithmetic
   else
 
-    # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
+    # append input to log file
     echo $input >> ./log
+
+    # do basic arithmetic
+    # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
     answer=$(echo "print($input)" | python)
+
     printToTerminalAndWriteToFile
 
   fi
