@@ -45,41 +45,38 @@ fi
 
 # supports + - / * ** % , chaining of operands, etc
 
-function python_way_arithmetic(){
-  echo "print($1)" | python
-}
 
-function basic_arithmetic_wrapper(){
-  echo
-  read -p "Calc:" input
-  echo $input >> ./log
-  answer=$(python_way_arithmetic "$input")
+#function basic_arithmetic_wrapper(){
+  #echo
+  #read -p "Calc:" input
+  #echo $input >> ./log
+  #answer=$(python_way_arithmetic "$input")
+#}
+
+function printToTerminalAndWriteToFile(){
   echo $answer
   echo
   echo $answer >> ./log
   echo >> ./log
 }
 
-
-function trigonometric(){
+function math_function(){
   read -p "input:" input
 
-  # if input contain sin/cost/tan
-  # do trigonometry
+  # if input contain sin/cos/tan, do trigonometry
   # example input: sin(30), cos(30), tan(30)
   if [[ $input =~ sin|cos|tan ]]; then
-    echo "import math; print(math.$input)" | python
+    echo $input >> ./log
+    answer=$(echo "import math; print(math.$input)" | python)
+    printToTerminalAndWriteToFile
   else
-    # else do normal
+    # else do basic arithmetic
     # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
-    echo "print($input)" | python
+    echo $input >> ./log
+    answer=$(echo "print($input)" | python)
+    printToTerminalAndWriteToFile
   fi
 
-}
-
-function all(){
-  read -p "input:" input
-  echo "import math; print(math.$input)" | python
 }
 
 # -------------------------------------------------------------- #
@@ -88,34 +85,9 @@ function all(){
 echo -e \
 "
 \e[96m[ Calculator ]\033[0m
-------------------------------------
-Choose operation by index number:
-------------------------------------
-1) + - / * ** %
-2) Trigonometry
-------------------------------------
 "
 
-# -------------------------------------------------------------- #
-# main function
-# -------------------------------------------------------------- #
-
-function main(){
-  read -p index: operationIndexNum
-
-  case "$operationIndexNum" in
-    1)
-      basic_arithmetic_wrapper
-      ;;
-    2)
-      trigonometric
-      ;;
-    *)
-      echo -e "\e[31mInvalid index number\e[0m"
-      exit 1
-  esac
-}
 
 while true; do
-  main
+  math_function
 done
