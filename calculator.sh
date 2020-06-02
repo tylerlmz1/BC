@@ -85,8 +85,31 @@ function math_function(){
 echo -e \
 "
 \e[96m[ Calculator ]\033[0m
-"
+This calculator supports + - * / % ** and trigonometry
 
+It also supports floating point numbers
+
+It prints the answer to your terminal session, and logs both your input and the answer into a file called log in your current directory
+
+--------------
+Example inputs
+--------------
+243+432.423
+52-23
+5*6
+6/3.2
+2**2
+5%2
+sin(30)
+cos(30)
+tan(30)
+
+You can also chain operations like this:
+sin(60)+2**23.3
+2+4/2-3
+
+Try it out!
+"
 
 while true; do
   math_function
