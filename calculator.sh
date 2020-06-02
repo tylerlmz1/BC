@@ -7,7 +7,7 @@
 # -------------------------------------------------------------- #
 # Check if Python exists
 # -------------------------------------------------------------- #
-# Python is included in major linux distributions
+# Python is included in major linux distros
 # exit with error message if python is not installed
 if ! [ -x "$(command -v python)" ]; then
   echo \
@@ -25,27 +25,37 @@ fi
 # -------------------------------------------------------------- #
 
 function printToTerminalAndWriteToFile(){
+
+  # print answer to terminal and add newline rightafter
   echo $answer
   echo
+
+  # print answer to log file and add newline rightafter
   echo $answer >> ./log
   echo >> ./log
+
 }
 
 function math_function(){
+
   read -p "input:" input
 
   # if input contain sin/cos/tan, do trigonometry
-  # example input: sin(30), cos(30), tan(30)
   if [[ $input =~ sin|cos|tan ]]; then
+
     echo $input >> ./log
+    # example input: sin(30), cos(30), tan(30)
     answer=$(echo "import math; print(math.$input)" | python)
     printToTerminalAndWriteToFile
+
   else
-    # else do basic arithmetic
+  # else do basic arithmetic
+
     # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
     echo $input >> ./log
     answer=$(echo "print($input)" | python)
     printToTerminalAndWriteToFile
+
   fi
 
 }
