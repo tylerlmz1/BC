@@ -78,9 +78,12 @@ echo -e \
 "
 \e[96m[ Calculator ]\033[0m
 
-This calculator supports: + - * / % **, trigonometry, floating point numbers and operation chaining
+This calculator supports: + - * / % **, trigonometry,
+floating point numbers and operation chaining
 
-In addition to printing the answer to your terminal session, it also logs both your input and the answer into a file called log in your current directory
+In addition to printing the answer to your terminal session,
+it also logs both your input and the answer into a file
+called log in your current directory
 
 --------------
 Example inputs
