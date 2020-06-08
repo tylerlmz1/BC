@@ -53,8 +53,6 @@ function mathFunction(){
     # example input: sin(30), cos(30), tan(30)
     answer=$(echo "import math; print(math.$input)" | python)
 
-    printToTerminalAndWriteToFile
-
   # else do basic arithmetic
   else
 
@@ -62,9 +60,9 @@ function mathFunction(){
     # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
     answer=$(echo "print($input)" | python)
 
-    printToTerminalAndWriteToFile
-
   fi
+
+  printToTerminalAndWriteToFile
 
 }
 
