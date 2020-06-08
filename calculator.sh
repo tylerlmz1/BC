@@ -43,11 +43,11 @@ function mathFunction(){
 
   read -p "input:" input
 
+  # append input to log file
+  echo $input >> ./log
+
   # if input contain sin/cos/tan, do trigonometry
   if [[ $input =~ sin|cos|tan ]]; then
-
-    # append input to log file
-    echo $input >> ./log
 
     # do trigonometry
     # example input: sin(30), cos(30), tan(30)
@@ -57,9 +57,6 @@ function mathFunction(){
 
   # else do basic arithmetic
   else
-
-    # append input to log file
-    echo $input >> ./log
 
     # do basic arithmetic
     # example input: 1+1, 2**2*34, 5.3/2, 2-4, 5%2
