@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Check if Python exists
-# exit with error message if python is not installed
+# Check if Python exists, exit with error message if python is not installed
 if ! [ -x "$(command -v python)" ]; then
   echo \
     'Error: Python is not installed.
@@ -10,22 +9,6 @@ if ! [ -x "$(command -v python)" ]; then
   if you are using Debian-based Linux distro.'>&2
   exit 1
 fi
-
-# -------------------------------------------------------------- #
-# functions
-# -------------------------------------------------------------- #
-
-#function printToTerminalAndWriteToFile(){
-
-  ## print answer to terminal and add newline rightafter
-  #echo $answer
-  #echo
-
-  ## print answer to log file and add newline rightafter
-  #echo $answer >> ./log
-  #echo >> ./log
-
-#}
 
 function promptOpsAndDoMath(){
   read -p "input:" input >> ./log
@@ -37,8 +20,8 @@ function promptOpsAndDoMath(){
     answer=$(echo "print($input)" | python)
   fi
 
-  echo $answer | tee -a ./log
-
+  #printf "$answer\n" | tee -a ./log
+  echo -e "$answer\n" | tee -a ./log
 }
 
 # -------------------------------------------------------------- #
