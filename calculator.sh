@@ -10,7 +10,8 @@ if ! [ -x "$(command -v python)" ]; then
   exit 1
 fi
 
-function promptOpsAndDoMath(){
+function promptAndDoMath(){
+
   read -p "input:" input >> ./log
   echo "$input" >> ./log
 
@@ -20,46 +21,27 @@ function promptOpsAndDoMath(){
     answer=$(echo "print($input)" | python)
   fi
 
-  #printf "$answer\n" | tee -a ./log
   echo -e "$answer\n" | tee -a ./log
 }
 
 # -------------------------------------------------------------- #
 # Welcome message
 # -------------------------------------------------------------- #
-#echo -e \
-#"
-#\e[96m[ Calculator ]\033[0m
+echo -e \
+"
+\e[96m[ Calculator ]\033[0m
 
-#This calculator supports: + - * / % **, trigonometry,
-#floating point numbers and operation chaining
+This calculator supports: + - * / % **, trigonometry,
+floating point numbers and operation chaining
 
-#In addition to printing the answer to your terminal session,
-#it also logs both your input and the answer into a file
-#called log in your current directory
+It also prints input and answer to the terminal and a log file in your current directory
 
-#--------------
-#Example inputs
-#--------------
-#243+432.423
-#52-23
-#5*6
-#6/3.2
-#2**2
-#5%2
-#sin(30)
-#cos(30)
-#tan(30)
+Example inputs:
 
-#You can also chain operations like this:
-#sin(60)+2**23.3
-#2+4/2-3
-
-#Try it out!
-#------------------------------------------
-#"
+2+4/2-3
+sin(60)+2**23.3
+"
 
 while true; do
-  #mathFunction
-  promptOpsAndDoMath
+  promptAndDoMath
 done
